@@ -12,7 +12,12 @@ public class MathExamples {
         double dblNumE = 0.1f;
         double dblNumF = 0.2f;
         double dblNumG = -9f;
-
+        
+        RoundingMode rmHalfUp = RoundingMode.HALF_UP;
+        BigDecimal bdNumE = new BigDecimal (0.1).setScale(1, rmHalfUp);
+        BigDecimal bdNumF = new BigDecimal (0.2).setScale(1, rmHalfUp);
+        
+        
         System.out.println(intNumA + " + " + intNumB + " = " + add(intNumA, intNumB));
         System.out.println(intNumA + " - " + intNumB + " = " + sub(intNumA, intNumB));
         System.out.println(intNumA + " x " + intNumB + " = " + mult(intNumA, intNumB));
@@ -24,6 +29,7 @@ public class MathExamples {
         System.out.println("\n");
         System.out.println((0.1f == 0.1d));
         System.out.println("\n");
+        System.out.println(bdNumE + " + " + bdNumF + " = "+ add(bdNumE, bdNumF));
         System.out.println(dblNumC + " - " + dblNumD + " = " + sub(dblNumC, dblNumD));
         System.out.println(dblNumC + " x " + dblNumD + " = " + mult(dblNumC, dblNumD));
         System.out.printf("%1.1f " + (char) 247 + " %1.1f" + " = " + "%1.3f \n", dblNumC, dblNumD, div(dblNumC, dblNumD));
@@ -34,7 +40,12 @@ public class MathExamples {
         System.out.println("The absolute value of " + dblNumG + " = " + absoluteVal(dblNumG));
     }
 
-    // métodos
+    public static BigDecimal add(BigDecimal bdNum1, BigDecimal bdNum2) {
+
+    	return bdNum1.add(bdNum2);
+
+    	}
+	// métodos
     public static int add(int intNum1, int intNum2) {
         return (intNum1 + intNum2);
     }
